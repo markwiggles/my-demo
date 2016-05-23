@@ -1,0 +1,33 @@
+!!!
+%html
+  %head
+    %title Rails Demo
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %header.navbar.navbar-fixed-top.navbar-inverse
+      .container
+        =link_to "Rails Demo", root_path, id: "logo"
+        %nav
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              =link_to "Home", root_path
+            %li
+              =link_to "Help", help_path
+            %li
+              =link_to "Login", "#"
+    .container
+      = yield
+      %footer.footer
+        -# %small
+        -#   The
+        -#   %a{:href => "http://www.railstutorial.org/"} Ruby on Rails Tutorial
+        -#   by
+        -#   %a{:href => "http://www.michaelhartl.com/"} Michael Hartl
+        %nav
+          %ul
+            %li
+              =link_to "About", '#'
+            %li
+              =link_to "Contact", '#'
